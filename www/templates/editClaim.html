@@ -1,0 +1,135 @@
+<html>
+<head>
+
+  <style>
+    .tabs-striped.tabs-background-positive .tabs {
+    background-color: #000033;
+    background-image: none;
+}
+.tabs-top > .tabs, .tabs.tabs-top {
+    top: 0px;
+
+}
+.tab-title{
+color: burlywood;
+font : bold;
+}
+.tab-item .icon {
+    display: block;
+    margin: 0 auto;
+    height: 32px;
+    color: white;
+    font-size: 32px;
+}
+#checkbox
+{
+    position: relative;
+    top: 3px;
+}
+input[type="checkbox"]{
+    width: 18px;
+    height: 17px;
+}
+tab-title {
+    color: white;
+}
+
+  select {
+
+  /* styling */
+  background-color: white;
+  border: thin solid whitesmoke;
+  border-radius: 4px;
+  display: inline-block;
+  font: inherit;
+  line-height: 2.0em;
+  padding: 0.5em 3.5em 0.5em 1em;
+
+  /* reset */
+
+    margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+
+/* arrows */
+
+select.classic {
+width: 100%;
+  background-image:
+    linear-gradient(45deg, transparent 50%, blue 50%),
+    linear-gradient(135deg, blue 50%, transparent 50%),
+    linear-gradient(to right, whitesmoke, whitesmoke);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    100% 0;
+  background-size:
+    5px 5px,
+    5px 5px,
+    2.5em 3.5em;
+  background-repeat: no-repeat;
+}
+
+select.classic:focus {
+  background-image:
+    linear-gradient(45deg, white 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, white 50%),
+    linear-gradient(to right, gray, gray);
+  background-position:
+    calc(100% - 15px) 1em,
+    calc(100% - 20px) 1em,
+    100% 0;
+  background-size:
+    5px 5px,
+    5px 5px,
+    2.5em 3.5em;
+  background-repeat: no-repeat;
+  border-color: grey;
+  outline: 0;
+}
+tab-nav tabs {
+    padding-left: 22em;
+}
+
+</style>
+</head>
+
+
+<body>
+  <ion-tabs class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
+
+    <ion-tab title="POLICY"  ui-sref="editClaim.policy">
+      <ion-nav-view  name="help-policy">
+      </ion-nav-view>
+    </ion-tab>
+    <ion-tab title="EVALUATION" ui-sref="editClaim.evaluation">
+      <ion-nav-view  name="evaluation">
+      </ion-nav-view>
+    </ion-tab>
+    <ion-tab title="pdf" icon="ion-document">
+    </ion-tab>
+
+    <button class="button icon-left ion-chevron-left button-clear button-dark " ng-click="goBack()" style="left: 0;
+    position: absolute;color:white">Claim
+      </button>
+
+    <div id="container">
+      <div id="btnOuterDIV">
+        <div id="btnChkbox">
+
+          <div id="read-confirm-box" style="margin-top: 0em;">
+
+            <input type="checkbox" id="checkbox" />    Submit
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-tabs>
+
+  </body>
+  </html>

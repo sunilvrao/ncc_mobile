@@ -1,1 +1,132 @@
-/* Empty. Add your own CSS if you like */
+.active{
+  opacity: 1;
+    background: red;
+    background-color: red;
+}
+#parent_div_1 {
+  width: 100%;
+  height: 100%;
+
+}
+.child_div_1 {
+  float: left;
+}
+.tab-title {
+    color: white;
+}
+.dashImg {
+    position: fixed;
+    left: 50%;
+    margin-left: -100px;
+    margin-top: 5em;
+    height: 6em;
+    width: 11em;
+    padding-left: 5em;
+}
+.dashImgPickup {
+ position: fixed;
+     left: 50%;
+     margin-left: -96px;
+     margin-top: 148px;
+     height: 1em;
+     width: 5em;
+     padding-left: 9em;
+}
+.dashName {
+    position: fixed;
+    left: 30%;
+    color:aliceblue;
+    margin-top: 16em;
+}
+.dashDesignation {
+    position: fixed;
+    left: 32%;
+    color:black;
+    margin-top: 18em;
+}
+#leftHalf {
+   width: 50%;
+   position: absolute;
+   left: 0px;
+   height: 100%;
+}
+#rightHalf {
+
+   width: 50%;
+   position: absolute;
+   right: 0px;
+   height: 100%;
+}
+.myTabStyle {
+    	background-color:#1b4d71 !important;
+    }
+
+.bar .back-button.hide, .bar .buttons .hide {
+    display: inherit;
+}
+
+#container  {padding:50px;}
+#btnOuterDIV{
+    height: 50px;
+        margin-right: -2em;
+        position: absolute;
+            right: 0;
+        width: 11em;
+        background-color: darkslateblue;
+        border: 1px solid #ccc;
+        margin-top: -52px;
+        border-radius: 1px;
+}}
+#btnOuterDIV:hover{border-color:#888;cursor:pointer;}
+#btnChkbox{height:15px;padding-top:5px;padding-left:5px;color: white;}
+
+.alicesmoke{
+background-color: whitesmoke;
+}
+
+.center {
+    display:block ;
+}
+
+.badge{
+background-color: red;
+
+}
+.activeButton{
+background-color: skyBlue;
+
+}
+
+ .block label { display: block;
+text-align: left;
+}
+.box {
+    padding : 5px;
+    display : inline-block;
+    min-width: 100px;
+    min-height: 50px;
+
+}
+.responsive-width {
+    font-size: 3vw;
+}
+.responsive-card {
+    width: 100%;
+    float: left;
+}
+
+@media screen and (min-width: 768px) {
+    .responsive-card {
+        width: 25%;
+    }
+}
+.fontAndColor {
+font-family: monospace;
+color: darkgray;
+}
+.navColor{
+background: #000033;
+}
+tab-title {
+    color: white;
+}

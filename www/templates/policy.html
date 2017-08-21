@@ -1,0 +1,274 @@
+
+
+<ion-pane>
+<ion-view style="background-color:#eff0f1;">
+  <form>
+  <ion-content>
+
+    <div class ="row">
+      <div class="col col-10">
+      </div>
+   <div class="col col-80"  style="background-color:white;">
+    <div style="width:100%;padding-left: 4em;">
+         <div class ="row responsive-md">
+          <div class="col col-30">
+            <font size="3", color="mediumslateblue">Claim details</font>
+             </div>
+             </div>
+
+          <div class="row responsive-md">
+            <div class="col col-30">
+              <div>
+                <span class="block">
+                  <font size="2", color="black", class="fontAndColor" >CLAIM NO</font></span>
+                <label class="item item-input">
+                  <input type="text", ng-model="details.claim.claim_number">
+
+                </label>
+               </div>
+              </div>
+              <div class="col col-30">
+
+
+
+                <div>
+          <span class="block">
+          <font size="2", color="black",font family = "serif", class="fontAndColor">TYPE OF LOSS</font>
+          </span>
+                  <select class="classic", ng-model="type_of_damage", ng-options="item.value as item.label for item in items" >
+                  </select>
+                </div>
+              </div>
+            <div class="col col-30">
+              <div>
+                <span class="block">
+                     <font size="2", color="black",font family = "serif", class="fontAndColor">LOSS DATE</font></span>
+                <label class="item item-input">
+                  <input type="date", ng-model="details.claim.lossDate ">
+                </label>
+              </div>
+                </div>
+            </div>
+            <br>
+             <hr>
+
+            <div class ="row responsive-md">
+              <div class="col col-30">
+                <font size="3", color="mediumslateblue">Policy Holder</font>
+              </div>
+            </div>
+    <div class="row responsive-md">
+              <div class="col col-30">
+                <div>
+                  <span class="block">
+                          <font size="2", color="black", class="fontAndColor" >NAME</font></span>
+                  <label class="item item-input">
+                    <input type="text", ng-model="details.policy_holder.name">
+                  </label>
+                 </div>
+                </div>
+
+                <div class="col col-30">
+                  <div >
+                  <span class="block">
+                          <font size="2", color="black", class="fontAndColor">DAY TIME PHONE</font></span>
+                  <label class="item item-input">
+                    <input type="text", ng-model="details.policy_holder.day_time_phone_number">
+                  </label>
+                </div>
+               </div>
+                <div class="col col-30">
+
+                  <div>
+                    <span class="block">
+                            <font size="2", color="black", class="fontAndColor">NIGHT TIME PHONE</font></span>
+                    <label class="item item-input">
+                      <input type="text", ng-model="details.policy_holder.night_time_phone_number">
+                    </label>
+                  </div>
+                    </div>
+      </div>
+
+    <div class="row responsive-md">
+                  <div class="col col-100">
+
+                    <div>
+                      <span class="block">
+                          <font size="2", color="black", class="fontAndColor" >ADDRESS</font></span>
+                      <label class="item item-input">
+                        <input type="text", ng-model="details.policy_holder.address">
+                      </label>
+                    </div>
+                      </div>
+      </div>
+    <div class="row responsive-md">
+                <div class="col col-30">
+                  <div>
+              <span class="block">
+              <font size="2", color="black",font family = "serif", class="fontAndColor">STATE</font>
+              </span>
+                    <select class="classic", ng-model="phone", ng-options="item.value as item.label for item in state" >
+                    </select>
+                  </div>
+                </div>
+
+                  <div class="col col-30">
+                    <div>
+                <span class="block">
+                <font size="2", color="black",font family = "serif", class="fontAndColor">CITY</font>
+                </span>
+                      <select class="classic", ng-model="zip_code", ng-options="item.value as item.label for item in city" >
+                      </select>
+
+                    </div>
+                  </div>
+                          <div class="col col-30">
+
+                            <div>
+                        <span class="block">
+                        <font size="2", color="black",font family = "serif", class="fontAndColor">ZIP CODE</font>
+                        </span>
+                              <select class="classic", ng-model="zip_code", ng-options="item.value as item.label for item in zip" >
+                              </select>
+                            </div>
+                          </div>
+    </div>
+
+      <br>
+      <hr>
+
+    <div class ="row responsive-md">
+                <div class="col col-30">
+                  <font size="3", color="mediumslateblue"> INSURANCE COMPANY</font></h5>
+                  </div>
+
+    </div>
+    <div class="row responsive-md">
+                <div class="col col-30">
+
+                  <div>
+                    <span class="block">
+                     <font size="2", color="black", class="fontAndColor">NAME</font></span>
+                    <label class="item item-input">
+                      <input type="text", ng-model="insurance_company.name">
+                    </label>
+                   </div>
+                  </div>
+
+                    <div class="col col-30">
+
+                    <div>
+                      <span class="block">
+                                      <font size="2", color="black", class="fontAndColor" >PHONE</font></span>
+                      <label class="item item-input">
+                        <input type="text", ng-model="insurance_company.phone_number">
+                      </label>
+                    </div>
+                        </div>
+                    <div class="col col-30">
+
+                      <div>
+                        <span class="block">
+                           <font size="2", color="black", class="fontAndColor">FAX</font></span>
+                        <label class="item item-input">
+                          <input type="text", ng-model="insurance_company.fax">
+                        </label>
+                      </div>
+                        </div>
+      </div>
+    <div class="row responsive-md">
+              <div class="col col-30">
+
+                <div>
+                  <span class="block">
+                                  <font size="2", color="black", class="fontAndColor" >ADJUSTER</font></span>
+                  <label class="item item-input">
+                    <input type="text", ng-model="insurance_company.adjuster">
+                  </label>
+                 </div>
+                </div>
+
+                  <div class="col col-30">
+
+                  <div>
+                    <span class="block">
+                                    <font size="2", color="black", class="fontAndColor">CELL</font></span>
+                    <label class="item item-input">
+                      <input type="text", ng-model="insurance_company.ceil_number">
+                    </label>
+                  </div>
+                    </div>
+                    <div class="col col-30">
+
+                      <div>
+                        <span class="block">
+                                        <font size="2", color="black", class="fontAndColor" >EMAIL</font></span>
+                        <label class="item item-input">
+                          <input type="text", ng-model="insurance_company.email">
+                        </label>
+                      </div>
+                        </div>
+      </div>
+    <div class="row responsive-md">
+              <div class="col col-100">
+
+                <div>
+                  <span class="block">
+                                  <font size="2", color="black", class="fontAndColor">ADDRESS</font></span>
+                  <label class="item item-input">
+                    <input type="text", ng-model="insurance_company.address">
+                  </label>
+                </div>
+              </div>
+    </div>
+    <div class="row responsive-md">
+      <div class="col col-30">
+        <div>
+    <span class="block">
+    <font size="2", color="black",font family = "serif", class="fontAndColor">STATE</font>
+    </span>
+          <select class="classic", ng-model="phone", ng-options="item.value as item.label for item in state" >
+          </select>
+        </div>
+      </div>
+
+      <div class="col col-30">
+        <div>
+    <span class="block">
+    <font size="2", color="black",font family = "serif", class="fontAndColor">CITY</font>
+    </span>
+          <select class="classic", ng-model="zip_code", ng-options="item.value as item.label for item in city" >
+          </select>
+        </div>
+      </div>
+      <div class="col col-30">
+        <div>
+    <span class="block">
+    <font size="2", color="black",font family = "serif", class="fontAndColor">ZIP CODE</font>
+    </span>
+          <select class="classic", ng-model="zip_code", ng-options="item.value as item.label for item in zip" >
+          </select>
+        </div>
+      </div>
+    </div>
+</div>
+    <div class="col col-10">
+    </div>
+      </div>
+    </div>
+
+
+  </ion-content>
+  <ion-footer-bar class="bar-stable">
+    <div>
+      <button class="button button-balanced   responsive-width" style="position: absolute; right: 0;font-size: 2em;", ng-click="submitClaim()">
+        <font size="2", color="black">Save</font>
+      </button>
+    </div>
+  </ion-footer-bar>
+
+
+</form>
+</ion-view>
+
+</ion-pane>

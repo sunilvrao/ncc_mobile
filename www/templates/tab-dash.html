@@ -1,56 +1,116 @@
-<ion-view>
-  <ion-content class="padding">
+<html>
+<head>
+  <style>
+.input-group.input-group-unstyled input.form-control {
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+}
+.input-group-unstyled .input-group-addon {
+    border-radius: 4px;
+    border: 0px;
+    background-color: transparent;
+}
+.input-group-unstyled .input-group-addon1 {
+ padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+    /* background-color: #eee; */
+    /* border: 1px solid #ccc; */
+    border-radius: 4px;
+}
+}
+  </style>
+</head>
+<body>
 
-    <div class="row">
-        <div class="col col-50">
-          <img src = "img/adam.jpg">
+<ion-pane>
+  <ion-view>
+    <ion-content class="padding">
+      <div class="row responsive-md">
+        <div class="col col-50" >
+          <img alt="Company Logo"  src="img/ben.png" style="width:100%">
         </div>
 
-        <div class="col col-50">
-          <div class ="row">
-            </div>
-          <div class ="row">
-            </div>
-          <div class ="row">
-            <div class="col col-33 col-offset-20">
+        <div class="col col-10">
+        </div>
 
-              <h4><strong> National Cadet Consulting</strong></h4>
-              </div>
-            </div>
-
+        <div class="col col-30">
           <div class ="row">
-            <div class = "col col-80">
-                <div class="list">
-                       <label class="item item-input">
-                         <input type="text" placeholder="First Name">
-                       </label>
-                       <label class="item item-input">
-                         <input type="text" placeholder="Last Name">
-                       </label>
-                       <label class="item item-input">
-                         <input type="password" placeholder="Password">
-                       </label>
-
-                  <button class="button button-block button-assertive">
-                  Sign Up
-                  </button>
-                  </div>
-              </div>
           </div>
+          <div class ="row">
+          </div>
+          <br/>
+          <br/>
 
+          <div class ="row">
+            <div class="col col-10">
+
+
+            </div>
+            <div class="col col-60 col-offset-20">
+              <div class="input-group">
+            <span  class="input-group-addon" style="background-color: white;
+    border: 0;"><img alt="Company Logo" height="53" src="img/ben.png"> </span>
+
+              <span style="line-height:1em, font-family:bold">  <font color="black" size="2"> National Cadet Consulting</font></span>
+              </div>
+            </div>
+          </div>
+          <br/>
+          <br/>
+          <br/>
+
+          <div class ="row">
+            <div class = "col">
+              <form  method="post">
+              <div class="input-group">
+                      <span class="input-group-addon">
+                          <i class="icon ion-person"></i>
+                      </span>
+                <input type="text" class="form-control" ng-model="user.name"
+                       placeholder="  username" id="inputGroup" style="border-radius: 0px;border: 2px solid #ccc;height: 50px;background-color: #eee;"/>
+              </div>
+              </br>
+
+              <div class="input-group">
+                      <span class="input-group-addon">
+                          <i class="icon ion-email"></i>
+                      </span>
+                <input type="text" class="form-control" ng-model="user.email"
+                       placeholder="  email-address" id="inputGroup" style="border-radius: 0px;border: 2px solid #ccc;height: 50px;background-color: #eee;"/>
+              </div>
+              </br>
+              <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="icon ion-locked"></i>
+                        </span>
+                <input type="password" class="form-control" ng-model="user.password_digest"
+                       placeholder="  password" id="inputGroup" style="border-radius: 0px;border: 2px solid #ccc;height: 50px;background-color: #eee;"/>
+              </div>
+              </br>
+              <a class="button button-block button-assertive" style="background-color: darkred;"  ng-click="signUpUser(user)">
+                Sign up
+              </a>
+            </form>
+            </div>
+          </div>
           <div class="row">
-            <div class="col col-50">  <a href="#/forgotPassword">forgot Password </a>
+            <div class="col col-50 col-offset-5">  <a href="#/forgotPassword">forgot Password </a>
             </div>
-            <div class="col col-50">  <a href="#/dashboard">dash </a>
-            </div>
-            <div class="col  col-50">   <p> Have an Account
-              <span><a href="#/login">Login </a></span>
+            <div class="col  col-50">   <p> <span style="color:darkslategrey;"> have an account ? </span>
+              <span><a href= "#/login">Login </a></span>
             </p></div>
           </div>
-
-
-
         </div>
-     </div>
-  </ion-content>
-</ion-view>
+        <div class="col col-10">
+        </div>
+      </div>
+    </ion-content>
+  </ion-view>
+</ion-pane>
+</body>
+</html>

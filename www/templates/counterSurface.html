@@ -1,0 +1,485 @@
+<ion-pane >
+  <ion-view  style="background-color:whitesmoke !important;">
+    <ion-content padding="true" has-header="false">
+
+      <div class ="row">
+
+        <div class="col col-10">  </div>
+
+
+        <div class="col col-80"  style="background-color:white;">
+          <div class="row responsive-md" >
+            <div>
+              <button class="buttons button-icon ion-plus responsive-width" ng-click="showFilterBar()"></button>
+            </div>
+            <div class="col col-10"  ng-repeat="button in buttons">
+              <div class="button-bar">
+                <button style="border: 1px solid darkgrey;float:left" ng-class="{'activeButton': activeButton == $index}" ng-click="setActiveButton($index)"
+                        class="button  responsive-width">
+                  <font size="1" color="black">
+                    {{button.text}}</font>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class ="row responsive-md">
+            <div class="col col-80">
+        <span class="block">
+           <font size="2", color="blue">Cabinet-Kitchen 2</font>
+        </span>
+            </div>
+          </div>
+
+
+          <div class="row responsive-md">
+            <div class="col col-50">
+
+         <span class="block">
+          <font size="2", color="cadetblue">ROOM</font>
+         </span>
+              <select class="classic">
+                <option>Chrome Canary</option>
+                <option>Firefox Nightly</option>
+                <option>Chrome Canary</option>
+                <option>Firefox Nightly</option>
+                <option>Chrome Canary</option>
+                <option>Firefox Nightly</option>
+                <option>Chrome Canary</option>
+              </select>
+
+            </div>
+            <div class="col col-50">
+              <div>
+        <span class="block">
+           <font size="2", color="cadetblue">BRAND</font>
+          </span>
+                <select class="classic">
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row responsive-md">
+            <div class="col col-50">
+              <div>
+    <span class="block">
+    <font size="2", color="cadetblue">TYPE</font>
+    </span>
+                <select class="classic">
+
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col col-50">
+              <div>
+
+    <span class="block">
+    <font size="2", color="cadetblue">FINISH</font>
+    </span>
+                <select class="classic">
+
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                </select>
+              </div>
+            </div>
+
+          </div>
+          <div class="row responsive-md">
+            <div class="col col-50">
+              <div>
+    <span class="block">
+    <font size="2", color="cadetblue">SPECIES</font>
+    </span>
+                <select class="classic">
+
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col col-50">
+              <div>
+
+    <span class="block">
+    <font size="2", color="cadetblue">DOORSTYLE</font>
+    </span>
+                <select class="classic">
+
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                </select>
+              </div>
+            </div>
+
+
+
+          </div>
+
+          <div class="row responsive-md">
+            <div class="col col-50">
+              <div>
+    <span class="block">
+    <font size="2", color="cadetblue">ROLLOUT-TRAYS</font>
+    </span>
+                <select class="classic">
+
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col col-50">
+              <div>
+
+    <span class="block">
+    <font size="2", color="cadetblue">HEIGHT</font>
+    </span>
+                <select class="classic">
+
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                </select>
+              </div>
+            </div>
+
+
+
+          </div>
+          <div class="row responsive-md">
+            <div class="col col-50">
+              <div>
+    <span class="block">
+    <font size="2", color="cadetblue">DRAWER FACE</font>
+    </span>
+                <select class="classic">
+
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col col-50">
+              <div>
+
+    <span class="block">
+    <font size="2", color="cadetblue">CARCASS CONSTRUCTION</font>
+    </span>
+                <select class="classic">
+
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                </select>
+              </div>
+            </div>
+
+
+
+          </div>
+
+          <div class="row responsive-md">
+            <div class="col col-50">
+              <div>
+    <span class="block">
+    <font size="2", color="cadetblue">SHELVING</font>
+    </span>
+                <select class="classic">
+
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col col-50">
+              <div>
+
+    <span class="block">
+    <font size="2", color="cadetblue">CLIP TYPE</font>
+    </span>
+                <select class="classic">
+
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                </select>
+              </div>
+            </div>
+
+
+
+          </div>
+
+          <div class="row responsive-md">
+            <div class="col col-50">
+              <div>
+    <span class="block">
+    <font size="2", color="cadetblue">TOP MODELLING</font>
+    </span>
+                <select class="classic">
+
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col col-50">
+              <div>
+
+    <span class="block">
+    <font size="2", color="cadetblue">STACKED TOP MODELLING</font>
+    </span>
+                <select class="classic">
+
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                </select>
+              </div>
+            </div>
+
+
+
+          </div>
+
+          <div class="row responsive-md">
+            <div class="col col-50">
+              <div>
+    <span class="block">
+    <font size="2", color="cadetblue">CROWN MOLDING</font>
+    </span>
+                <select class="classic">
+
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col col-50">
+              <div>
+
+    <span class="block">
+    <font size="2", color="cadetblue">BOTTOM MOLDING</font>
+    </span>
+                <select class="classic">
+
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                </select>
+              </div>
+            </div>
+
+
+
+          </div>
+          <div class="row responsive-md">
+            <div class="col col-50">
+              <div>
+    <span class="block">
+    <font size="2", color="cadetblue">TOP KICK MOLDING</font>
+    </span>
+                <select class="classic">
+
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col col-50">
+              <div>
+
+    <span class="block">
+    <font size="2", color="cadetblue">HANGES</font>
+    </span>
+                <select class="classic">
+
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                </select>
+              </div>
+            </div>
+
+
+
+          </div>
+
+          <div class="row responsive-md">
+            <div class="col col-50">
+              <div>
+    <span class="block">
+    <font size="2", color="cadetblue">REASON</font>
+    </span>
+                <select class="classic">
+
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                  <option>Firefox Nightly</option>
+                  <option>Chrome Canary</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col col-50">
+    <span class="block">
+    <font size="2", color="cadetblue">NOTE</font>
+    </span>
+              <textarea style="border: 1px solid lightgrey;width:90%">
+
+</textarea>
+
+            </div>
+
+
+
+          </div>
+
+
+          <div class="row responsive-md">
+            <div class="col col-50">
+          <span class="block">
+          <font size="2", color="cadetblue">RECOMMENDATIONS</font>
+          </span>
+              <textarea  rows= "4" style="border: 1px solid lightgrey;width:90%">
+
+      </textarea>
+
+
+            </div>
+
+            <div class="col col-50">
+    <span class="block">
+    <font size="2", color="cadetblue">SUMMARY</font>
+    </span>
+              <textarea rows="4" style="border: 1px solid lightgrey;width:90%">
+      </textarea>
+            </div>
+          </div>
+          <div class="row responsive-md">
+            <div class="col col-100">
+
+              <div class="button" style = "height: 6em;
+    margin-top: 6px;
+    width: 7em;
+    /* padding-left: 0em; */
+    background-color: lightblue"><a class="button icon ion-camera" ng-model="imgData" ng-click="selectPicture()">
+              </a>
+              </div>
+              <div ng-repeat="img in images"  class="box">
+
+                <img style= "height: 7em;width: 9em;" ng-src="img/ben.png">
+
+              </div>
+              </br></br></br></br>
+
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="col col-10"> </div>
+      </div>
+
+
+    </ion-content>
+  </ion-view>
+</ion-pane>

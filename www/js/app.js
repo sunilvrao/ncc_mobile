@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.controllers','dashboard.module', 'starter.services','url.constants','ngCordova','jett.ionic.filter.bar'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -17,14 +17,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
     }
     if (window.StatusBar) {
-      // org.apache.cordova.statusbar required
+      // org.apache.cordova .statusbar required
       StatusBar.styleDefault();
     }
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
+$ionicConfigProvider.backButton.previousTitleText(false);
+$ionicConfigProvider.backButton.icon('ion-chevron-left');
+  $ionicConfigProvider.backButton.text('')
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
   // Set up the various states which the app can be in.
@@ -35,7 +38,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     .state('tab', {
     url: '/tab',
     abstract: true,
-    templateUrl: 'templates/tab-dash.html'
+    templateUrl: 'templates/tab-dash.html',
+    controller : 'DashCtrl'
   })
 
   // Each tab has its own nav history stack:
@@ -55,29 +59,71 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       templateUrl: 'templates/login.html',
       controller: 'loginCtrl'
   })
-  .state('dashboard', {
-        url: "/dashboard",
-        templateUrl: 'templates/dashboard.html',
-        controller: 'dashboardCtrl'
-    })
-  .state('tab.chats', {
-      url: '/chats',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
-        }
-      }
-    })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
-    })
+//  .state('dashboard', {
+//        url: "/dashboard",
+//        templateUrl: 'templates/dashboard/dashboard.html',
+//        controller: 'dashboardCtrl'
+//    })
+
+
+   .state('editClaim', {
+          url: '/dashboard/editClaim',
+          templateUrl: 'templates/editClaim.html',
+          controller: 'editClaimCtrl'
+
+
+      })
+
+       .state('editClaim.policy', {
+          url: '/policy/:oid',
+          views: {
+            'help-policy': {
+              templateUrl:  'templates/policy.html',
+              controller: 'policyCtrl'
+            }
+          }
+        })
+
+
+
+           .state('editClaim.evaluation', {
+          url: '/evaluation',
+          views: {
+            'evaluation': {
+              templateUrl:  'templates/evaluation.html',
+              controller: 'evaluationCtrl1'
+            }
+          }
+        })
+        .state('editClaim.evaluation.cabinet', {
+          url: '/cabinet',
+          views: {
+            'cabinet': {
+              templateUrl:  'templates/cabinet.html',
+              controller: 'cabinetCtrl'
+            }
+          }
+        })
+        .state('editClaim.evaluation.accessory', {
+          url: '/accessory',
+          views: {
+            'accessory': {
+              templateUrl:  'templates/accessory.html',
+              controller: 'accessoryCtrl'
+            }
+          }
+        })
+     .state('editClaim.evaluation.counterSurface', {
+          url: '/counterSurface',
+          views: {
+            'counterSurface': {
+              templateUrl:  'templates/counterSurface.html',
+              controller: 'counterSurfaceCtrl'
+            }
+          }
+        })
+
+
 
   .state('tab.account', {
     url: '/account',
@@ -93,3 +139,4 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $urlRouterProvider.otherwise('/tab/dash');
 
 });
+

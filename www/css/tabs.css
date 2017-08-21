@@ -1,0 +1,4 @@
+.tabs{
+  -webkit-justify-content: flex-start !important;
+justify-content: flex-start !important;
+}

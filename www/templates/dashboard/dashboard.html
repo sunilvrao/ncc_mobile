@@ -1,0 +1,281 @@
+<html>
+<head>
+  <link href="css/tabs.css" rel="stylesheet">
+<style>
+  select {
+  background-color: white;
+  border: thin solid blue;
+  border-radius: 4px;
+  display: inline-block;
+  font: inherit;
+  line-height: 1.5em;
+  padding: 0.5em 3.5em 0.5em 1em;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+select.classic {
+  background-image:
+    linear-gradient(45deg, transparent 50%, blue 50%),
+    linear-gradient(135deg, blue 50%, transparent 50%),
+    linear-gradient(to right, skyblue, skyblue);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    100% 0;
+  background-size:
+    5px 5px,
+    5px 5px,
+    2.5em 2.5em;
+  background-repeat: no-repeat;
+}
+
+select.classic:focus {
+  background-image:
+    linear-gradient(45deg, white 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, white 50%),
+    linear-gradient(to right, gray, gray);
+  background-position:
+    calc(100% - 15px) 1em,
+    calc(100% - 20px) 1em,
+    100% 0;
+  background-size:
+    5px 5px,
+    5px 5px,
+    2.5em 2.5em;
+  background-repeat: no-repeat;
+  border-color: grey;
+  outline: 0;
+}
+.bar{
+    height: 54px;
+    color: white;
+}
+.bar .title + .buttons {
+background-color:darkred;
+    height: 50px;
+}
+
+.tabs-top > .tabs, .tabs.tabs-top {
+    top: 19px;
+
+
+    background-color: #eff0f1;
+
+}
+
+.tab-title {
+    color: cadetblue;
+}
+
+</style>
+</head>
+<body>
+
+<ion-pane>
+<ion-view>
+<ion-side-menus enable-menu-with-back-views="false" >
+  <ion-side-menu-content>
+    <ion-nav-bar class="navColor">
+      <ion-nav-title>
+       Dashboard
+      </ion-nav-title>
+      <ion-nav-buttons side ="left">
+
+
+          <img alt="Company Logo" height="40" src="img/ben.png">
+        <div col="col col-5" style="width: 39%;color: white;
+    padding-left: 7em;font-size: 1px;">
+        <font size= "1" ,color="white"> NATIONAL
+          CABINET CONSULTING </font>
+
+        </div>
+
+      </ion-nav-buttons>
+      <ion-nav-buttons side="right">
+        <div>
+        <img alt="Company Logo" height="40" src="img/ben.png">
+
+        <button class="button button-icon " menu-toggle="right">
+          <font color="white", size="3" >Steve Ervin</font>
+          <i class = "icon icon  ion-arrow-down-b" style="color:white">
+          </i>
+          </button>
+          </div>
+
+      </ion-nav-buttons>
+    </ion-nav-bar>
+
+
+
+     <ion-pane style="margin-top: 3em; background-color: #eff0f1;justify-content: flex-start !important;">
+      <ion-tabs class="tabs-striped tabs-top tabs-color-energized" style="padding-right: 74em;    justify-content: flex-start !important;" >
+        <ion-tab title="Active" ui-sref="dashboard.active">
+          <ion-nav-view  name="active">
+
+          </ion-nav-view>
+
+        </ion-tab>
+        <ion-tab title="Submitted"  ui-sref="dashboard.submitted">
+          <ion-nav-view name="submitted">
+
+          </ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="Closed" ui-sref="dashboard.closed">
+          <ion-nav-view name="closed">
+
+          </ion-nav-view>
+        </ion-tab>
+
+        <!--<input type="text" style="    width: 25%;-->
+    <!--right: 7em;-->
+    <!--position: absolute;">-->
+        <span style=" right: 25em;font-size: small;color: cadetblue;
+    position: absolute; ">search claim policy holder etc</span>
+
+        <button class="button button-icon icon ion-ios-search-strong" ng-click="showFilterBar()" style="width: 25%;
+    right: 6em;
+    position: absolute;    font-size: x-large;">
+        </button>
+
+        <div class="button-bar" style="right:1em;position:absolute;width: 12%;">
+          <button
+            ng-repeat="button in buttons"
+            ng-class="{'badge': activeButton == $index}"
+            ng-click="setActiveButton($index)"
+            class="button" style="width: 5em;">
+            {{button.text}}
+          </button>
+        </div>
+      </ion-tabs>
+
+       </ion-pane>
+
+
+
+
+
+  </ion-side-menu-content>
+  <ion-side-menu side="right">
+    <ion-content style="background-color:darkred">
+
+      <div  ng-if="edit">
+      <div class="bar bar-header bar-assertive">
+        <a href="" ng-click = "editor()">
+        <span style="font-size: 17px;padding-left: 12px;color: aliceblue;">Edit </span>
+        </a>
+      </div>
+        <div>
+          <img class ="dashImg" style = "height: 9em;width: 13em" src="img/adam.jpg">
+        </div>
+        <div class ="row">
+          <h5 class ="dashName" style="padding-left: 2em;"> Steve ervin </h5>
+        </div>
+        <div class ="row">
+          <h5 class ="dashDesignation" style="padding-left: 2em;"> Inspector </h5>
+        </div>
+        <div class ="row">
+
+        </div>
+        <div class ="row">
+          <h5 class ="dashDesignation" style="padding-left: 2em; padding-top:7em">
+            <a class="button button-full button-positive" ng-click="logOut()">
+            Log Out
+            </a>
+          </h5>
+        </div>
+        </div>
+
+      <div  ng-if="!edit">
+        <div class="bar bar-header bar-assertive">
+          <a href="" ng-click = "save()">
+            <span style="font-size: 17px;padding-left: 12px;color: aliceblue;">Save </span>
+          </a>
+        </div>
+      <div>
+          <img class ="dashImg" style = "height: 9em;width: 13em;padding-left: 4em;color:" src="img/ben.png">
+
+        <!--<button class="button button-full button-positive" ng-click="getImageSaveContact()">-->
+          <!--Get Image and Save a Contact with It-->
+        <!--</button>-->
+
+        <div class="button-bar dashImgPickup"><a class="button icon ion-camera" ng-model="imgData" ng-click="selectPicture()">
+
+
+        </a> </div>
+      </div>
+
+
+      <div  class="row " style="padding-top: 16em;">
+          <div class="col col-50">
+               <span class="block">
+               <font size="2", color="black">First Name</font></span>
+            <label class="item item-input">
+              <input type="password" placeholder="First Name">
+            </label>
+            </div>
+           <div class="col col-50">
+                <span class="block">
+               <font size="2", color="black">Last Name</font></span>
+            <label class="item item-input">
+              <input type="password" placeholder="Last Name">
+            </label>
+            </div>
+          </div>
+
+         <div  class="row " >
+          <div class="col col-100">
+               <span class="block">
+               <font size="2", color="black">DESIGNATION</font></span>
+            <select class ="classic" ng-model="mySelect" ng-change="showSelectValue(mySelect)">
+              <option>wqqqqqqqqqqqqqqqqqqqqqq</option>
+              <option>37</option>
+              <option>38</option>
+              <option>39</option>
+              <option>40</option>
+            </select>
+            </div>
+
+          </div>
+         <div class="row" >
+
+             <div class="col">
+               <span class="block">
+               <font size="2", color="black">PHONE</font></span>
+             <select class="classic" ng-model="mySelect" ng-change="showSelectValue(mySelect)">
+               <option>wq</option>
+               <option>37</option>
+               <option>38</option>
+               <option>39</option>
+               <option>40</option>
+             </select>
+            </div>
+
+            <div class="col col-70 ">
+             <span class="block">
+               <font size="2", color="black">NUMBER</font></span>
+              <input type="text">
+             </div>
+          </div>
+        <div class="row" >
+          <div class="col col-100">
+             <span class="block">
+               <font size="2", color="black">Email Address</font></span>
+              <input type="text", placeholder="Email-Address">
+             </div>
+          </div>
+           </div>
+
+    </ion-content>
+  </ion-side-menu>
+
+</ion-side-menus>
+</ion-view>
+  </ion-pane>
+</body>
+</html>

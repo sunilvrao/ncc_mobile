@@ -1,0 +1,56 @@
+<ion-pane>
+  <ion-view style="background-color:#eff0f1;">
+    <ion-content>
+      <div class="row responsive-md">
+        <div collection-repeat="claim in claims" collection-item-height="76%" collection-item-width="25%">
+
+            <div ng-if="claim.val == 1" class="card" >
+              <div class="item item-text-wrap " style="background-color:darkred;text-align:center;">
+                <div class="list card" style="background-color:darkred;">
+                  <a class="button button-full" style="background-color:darkred;color: white;height: 20em;padding-top: 6em;"  href="#/dashboard/editClaim/policy/0">
+                    <i class = "icon icon ion-plus-round">
+                    </i>
+                    </br>
+                    <span> New Claim</span>
+                  </a>
+
+                </div>
+              </div>
+            </div>
+
+          <div class ="col">
+            <div ng-if="claim.val!= 1" class="card">
+              <div class="item item-text-wrap ">
+                <div class="list card">
+                  <ul class="list">
+                    <li class="item">
+                      <p> CLAIM NO</p>
+                      <p><strong> {{claim.id}}</strong></p>
+                      <span class="badge"><i class = "icon icon ion-ios-star">
+                </i></span>
+                    </li>
+                    <li class="item">
+                      <p> LOST DATE</p>
+                      <p><strong> {{claim.attributes['loss-date']}} </strong></p>
+                    </li>
+                    <li class="item">
+                      <p> POLICY HOLDER</p>
+                      <p><strong> NotDefined</strong></p>
+                    </li>
+                    <li class="item">
+                      <a class="button button-positive  button-full icon ion-gear-a" href="#/dashboard/editClaim/policy/{{claim._id.$oid}}">
+                        <font size="1", color="white"><strong> Edit Claim </strong></font>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </ion-content>
+  </ion-view>
+</ion-pane>

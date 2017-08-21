@@ -1,0 +1,47 @@
+<ion-pane>
+  <ion-view style="background-color:#eff0f1;">
+    <ion-content>
+
+
+      <div ng-repeat="item in items" ng-if="$index % 3 == 0" class="row">
+        <div class="col">{{items[$index]}}</div>
+        <div class="col" ng-if="items.length > ($index + 1)">{{items[$index + 1]}}</div>
+        <div class="col" ng-if="items.length > ($index + 2)">{{items[$index + 2]}}</div>
+      </div>
+
+      <!--<div class ="row responsive-md"  >-->
+        <!--<div collection-repeat="item in items">-->
+          <!--<div class ="col">-->
+            <!--<div class="card">-->
+              <!--<div class="item item-text-wrap ">-->
+                <!--<div class="list card">-->
+                  <!--<ul class="list">-->
+                    <!--<li class="item">-->
+                      <!--<p> CLAIM NO</p>-->
+                      <!--<p><strong> 323232</strong></p>-->
+
+                    <!--</li>-->
+                    <!--<li class="item">-->
+                      <!--<p> LOST DATE</p>-->
+                      <!--<p><strong> 323232</strong></p>-->
+                    <!--</li>-->
+                    <!--<li class="item">-->
+                      <!--<p> POLICY HOLDER</p>-->
+                      <!--<p><strong> XXXX YYYY</strong></p>-->
+                    <!--</li>-->
+                    <!--<li class="item">-->
+                      <!--<a class="button button-positive  button-full icon ion-gear-a" href="#/dashboard/editClaim/policy">-->
+                        <!--<font size="1", color="white"><strong> Edit Claim </strong></font>-->
+                      <!--</a>-->
+                    <!--</li>-->
+                  <!--</ul>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+
+    </ion-content>
+  </ion-view>
+</ion-pane>
