@@ -8,7 +8,7 @@
                 <div ng-if="claim.val == 1" class="card" style="height: 30em;background-color: darkred;">
                   <div class="item item-text-wrap " style="background-color:darkred;text-align:center;">
                     <div class="list card" style="background-color:darkred;">
-                        <a class="button button-full" style="background-color:darkred;color: white;height: 20em;padding-top: 6em;"  href="#/dashboard/editClaim/policy/">
+                        <a class="button button-full" style="background-color:darkred;color: white;height: 20em;padding-top: 6em;"  href="#/dashboard/editClaim/policy/0/0"  ng-click="unsetClaimInfo()">
                           <i class = "icon icon ion-plus-round">
                           </i>
                           </br>
@@ -38,7 +38,7 @@
                   <p><strong> NotDefined</strong></p>
                 </li>
                 <li class="item">
-                  <a class="button button-positive  button-full icon ion-gear-a" ng-href="#/dashboard/editClaim/policy/{{claim.id}}">
+                  <a class="button button-positive  button-full icon ion-gear-a" href="#/dashboard/editClaim/policy/{{claim.id}}/{{claim.attributes.number}}"  ng-click="setClaimInfo(claim.id, claim.attributes.number)">
                     <font size="1", color="white"><strong> Edit Claim </strong></font>
                   </a>
                  </li>

@@ -52,18 +52,7 @@ console.log($scope.password);
 })
 
 
-.controller('cabinetCtrl', function($scope) {
-$scope.buttons = [
-    {text: 'Kitchen1'},
-    {text: 'Kitchen2'},
-  ];
-    $scope.activeButton = 0;
-    $scope.setActiveButton = function(index) {
-      $scope.activeButton = index;
-    };
-$scope.images = [1,2,3];
-console.log("world cup here we are");
-})
+
 
 .controller('accessoryCtrl', function($scope) {
 $scope.images = [1,2,3];
@@ -74,8 +63,8 @@ $scope.images = [1,2,3];
 console.log("world cup here we are3232");
 })
 
-.controller('editClaimCtrl', function($scope, $ionicViewSwitcher,$ionicNavBarDelegate,$state,$timeout) {
-console.log("we goo23121d");
+.controller('editClaimCtrl', function($scope, $ionicViewSwitcher,$ionicNavBarDelegate,$state,$timeout,$ionicTabsDelegate) {
+
 $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
   viewData.enableBack = true;
 });
@@ -93,6 +82,8 @@ $scope.clicked = function(num) {
     $scope.var = num;
 }
 
+
+
 })
 
 .filter('toDate', function() {
@@ -101,97 +92,6 @@ $scope.clicked = function(num) {
     }
 })
 
-.controller('policyCtrl', function($scope,$http,$stateParams) {
-var editUrl = "http://ncc-api-pg-prod.rud4nwv3nb.us-east-1.elasticbeanstalk.com/insurances/1/claims/";
-
- $scope.items = [{
-        value: 'Water Loss',
-        label: 'Water Loss'
-      }, {
-        value: 'Fire Loss',
-        label: 'Fire Loss'
-      }];
-$scope.state = [];
-if($stateParams.oid)
-{
-  console.log("oid")
-  console.log($stateParams.oid);
-  var id =  $stateParams.oid.toString();
-  var oid = {id :id }
-  var editUrl = "http://ncc-api-pg-prod.rud4nwv3nb.us-east-1.elasticbeanstalk.com/insurances/1/claims/"+ id;
-}
-      $http({
-      method: "GET",
-      url: editUrl,
-      data: oid,
-      headers: {
-        'Authorization' : 'Token token=OSTpkT61NTQENaeJQplBIgtt'
-      }
-      }).then(function(response) {
-              $scope.items.push({id : 0,
-                   label : response.data.data.attributes['type-of-damage']
-               });
-              $scope.details  =  {claim : {
-                 //type_of_damage :$scope.items[0].label,
-                 claim_number :response.data.data.attributes['number'],
-                 lossDate :response.data.data.attributes['loss-date']
-                }};
-              console.log($scope.details);
-              //Get the insurance company
-               var insuranceUrl = "http://ncc-api-pg-prod.rud4nwv3nb.us-east-1.elasticbeanstalk.com/insurances/"+response.data.data.relationships.insurance.data.id;
-
-               $http({
-                    method: "GET",
-                    url: insuranceUrl,
-                    headers: {
-                      'Authorization' : 'Token token=OSTpkT61NTQENaeJQplBIgtt'
-                    }
-
-      }).then(function(response){
-            console.log(response);
-           $scope.insurance_company = {
-            name : response.data.data.attributes.name,
-            phone_number : response.data.data.attributes.phone,
-            fax : response.data.data.attributes.fax,
-            address : response.data.data.attributes.address,
-            city : response.data.data.attributes.city,
-            state : response.data.data.attributes.state,
-            zip : response.data.data.attributes.zip,
-            ceil_number : response.data.data.attributes['contact-phone'],
-            email : response.data.data.attributes['contact-email'],
-
-           }
-           $scope.zip =[];
-           $scope.zip.push({id: 0,
-                  label: response.data.data.attributes.zip,
-             })
-
-              $scope.city =[];
-           $scope.city.push({id: 0,
-                  label: response.data.data.attributes.city,
-             })
-            $scope.details= {
-                     policy_holder : {
-                      name : response.data.data.attributes['contact-name'],
-                      day_time_phone_number : response.data.data.attributes['contact-phone']
-
-                     }
-            }
-
-             $scope.state.push({id : 0,
-                             label : response.data.data.attributes.state
-                         });
-
-      },function(response){
-      })
-      console.log(response);
-      })
-})
-
-
-.controller('evaluationCtrl1', function($scope) {
-console.log("323r223r23r23r23r23r23r23r");
-})
 
 
 //.controller('dashboardCtrl', function($scope, $state, $ionicPlatform, $location, $ionicHistory, $cordovaImagePicker,$cordovaCamera,$ionicFilterBar) {

@@ -75,7 +75,7 @@ $ionicConfigProvider.backButton.icon('ion-chevron-left');
       })
 
        .state('editClaim.policy', {
-          url: '/policy/:oid',
+          url: '/policy/:oid/:number',
           views: {
             'help-policy': {
               templateUrl:  'templates/policy.html',
@@ -91,7 +91,7 @@ $ionicConfigProvider.backButton.icon('ion-chevron-left');
           views: {
             'evaluation': {
               templateUrl:  'templates/evaluation.html',
-              controller: 'evaluationCtrl1'
+              controller: 'evaluationCtrl'
             }
           }
         })
