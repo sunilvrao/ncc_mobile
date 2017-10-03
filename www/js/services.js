@@ -3,6 +3,7 @@ angular.module('starter.services', [])
 .factory('claimStorage', function() {
     var supervisorId= {};
     var parkingId = {};
+
      function setClaimId(data){
           parkingId = data;
       }
@@ -21,5 +22,18 @@ angular.module('starter.services', [])
               setClaimNumber : setClaimNumber,
               getClaimNumber : getClaimNumber
 
+          }
+})
+
+.factory('user', function() {
+     function setUser(data){
+          user = data;
+      }
+      function getUser(){
+          return user;
+      }
+      return {
+              setUser : setUser,
+              getUser : getUser
           }
 });

@@ -2,7 +2,8 @@ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope, $cordovaImagePicker,$cordovaCamera, $ionicPlatform,$http,$location) {
  console.log('dhfvwyjefvw')
-  var url = "http://ncc-api-pg-prod.rud4nwv3nb.us-east-1.elasticbeanstalk.com/insurances";
+  //var url = "http://ncc-api-pg-prod.rud4nwv3nb.us-east-1.elasticbeanstalk.com/insurances";
+var url = "http://localhost:3000/users";
   $scope.user;
   $scope.signUpUser = function(user){
   console.log(user);
@@ -25,7 +26,8 @@ angular.module('starter.controllers', [])
 
 .controller('loginCtrl', function($scope,$http,$location) {
 console.log("we good");
-var url = "http://ncc-api-pg-prod.rud4nwv3nb.us-east-1.elasticbeanstalk.com/login.json";
+//var url = "http://ncc-api-pg-prod.rud4nwv3nb.us-east-1.elasticbeanstalk.com/login.json";
+var url = "http://localhost:3000/users/signin";
 $scope.loginUser = function(user){
 console.log('gege');
 console.log(user);
@@ -42,11 +44,15 @@ console.log($scope.password);
       'Authorization' : 'Token token=21SrQqpxUsP3yDHNncrXiAtt'
     }
   }).then(function(response) {
-    console.log(response)
+    console.log(response);
+    console.log(response.data);
+    console.log(response.data.user);
+user.setUser(response.data.user);
+console.log(user.getUser().name);
          $location.path('/dashboard');
       },function(err){
        console.log("error");
-         $location.path('/dashboard');
+//         $location.path('/dashboard');
       });
 }
 })

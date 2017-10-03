@@ -1,6 +1,6 @@
 
 angular.module('dashboard.module')
-.controller('ActiveCtrl', function($scope, $location,$http,$stateParams,claimStorage ) {
+.controller('ActiveCtrl', function($scope, $location,$http,$stateParams,claimStorage, user ) {
 
 $scope.claims = [{val : 1}];
 
@@ -24,12 +24,14 @@ $scope.unsetClaimInfo = function(){
   console.log(claimStorage.getClaimNumber());
 
 }
-  var url = "http://ncc-api-pg-prod.rud4nwv3nb.us-east-1.elasticbeanstalk.com/insurances/1/claims";
+console.log("hehehehe");
+console.log(user.getUser());
+  var url = "http://localhost:3000/users/"+user.getUser().id+"/claims";
   $http({
   method: "GET",
   url: url,
   headers: {
-    'Authorization' : 'Token token=OSTpkT61NTQENaeJQplBIgtt'
+    'Authorization' : 'Token token=Obf3czsWCpCju7ENu66iyAtt'
   }
 }).then(function(response) {
      console.log(response);
