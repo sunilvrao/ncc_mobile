@@ -1,7 +1,39 @@
 angular.module('dashboard.module')
-.controller('policyCtrl', function($scope,$http,$stateParams,claimStorage) {
+.controller('policyCtrl', function($scope,$http,$location, $stateParams,claimStorage) {
   console.log("dilwef");
   console.log($stateParams.oid);
+var url = "http://localhost:3000/users/4/claims";
+$scope.submitClaim = function(claim, insurance_company){
+console.log('gege');
+console.log($stateParams.oid);
+if($stateParams.oid == 0){
+method = "POST"
+} else {
+url = "http://localhost:3000/users/4/claims/"+$stateParams.oid;
+method = "PUT"
+}
+  $http({
+    method: method,
+    data: {
+    claim: {id: $stateParams.oid, number: '123', type_of_damage: 'Water Loss', loss_date: '10-05-2017'}, insurance_company: {name: 'Insurance 1', phone: '9999999999', fax: 'Fax', contact_name: 'Adjuster', contact_phone: '9999999999', contact_email: 'email@email.com', address: 'Address', city: 'City', state: 'IL', zip: '12345'}, policy_holder: {name: 'Policy Holder', address: 'Address', city: 'City', state: 'IL', zip: '12345', day_time_phone: '1111111111', night_time_phone: '2222222222'}
+    },
+    url: url,
+    headers: {
+      'Authorization' : 'Token token=Obf3czsWCpCju7ENu66iyAtt',
+      'Access-Control-Allow-Origin' : '*'
+    }
+  }).then(function(response) {
+    console.log(response);
+    console.log(response.data);
+//user.setUser(response.data.user);
+//console.log(user.getUser().name);
+         $location.path('/dashboard/active');
+      },function(err){
+       console.log("error");
+//         $location.path('/dashboard');
+      });
+}
+
 var editUrl = "http://ncc-api-pg-prod.rud4nwv3nb.us-east-1.elasticbeanstalk.com/insurances/1/claims/";
  $scope.items = [{
         value: 'Water Loss',
@@ -20,14 +52,15 @@ if($stateParams.oid != 0)
   console.log(claimStorage.getClaimNumber());
   var id =  $stateParams.oid.toString();
   var oid = {id :id }
-  var editUrl = "http://ncc-api-pg-prod.rud4nwv3nb.us-east-1.elasticbeanstalk.com/insurances/1/claims/"+ id;
+//  var editUrl = "http://ncc-api-pg-prod.rud4nwv3nb.us-east-1.elasticbeanstalk.com/insurances/1/claims/"+ id;
+  var editUrl = "http://localhost:3000/users/4/claims/1126";
 
       $http({
       method: "GET",
       url: editUrl,
       data: oid,
       headers: {
-        'Authorization' : 'Token token=OSTpkT61NTQENaeJQplBIgtt'
+        'Authorization' : 'Token token=Obf3czsWCpCju7ENu66iyAtt'
       }
       }).then(function(response) {
               $scope.items.push({id : 0,
@@ -40,13 +73,14 @@ if($stateParams.oid != 0)
                 }};
               console.log($scope.details);
               //Get the insurance company
-               var insuranceUrl = "http://ncc-api-pg-prod.rud4nwv3nb.us-east-1.elasticbeanstalk.com/insurances/"+response.data.data.relationships.insurance.data.id;
+//               var insuranceUrl = "http://ncc-api-pg-prod.rud4nwv3nb.us-east-1.elasticbeanstalk.com/insurances/"+response.data.data.relationships.insurance.data.id;
+               var insuranceUrl = "http://localhost:3000/insurances/"+response.data.data.relationships.insurance.data.id;
 
                $http({
                     method: "GET",
                     url: insuranceUrl,
                     headers: {
-                      'Authorization' : 'Token token=OSTpkT61NTQENaeJQplBIgtt'
+                      'Authorization' : 'Token token=Obf3czsWCpCju7ENu66iyAtt'
                     }
 
       }).then(function(response){

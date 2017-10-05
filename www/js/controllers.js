@@ -47,9 +47,9 @@ console.log($scope.password);
     console.log(response);
     console.log(response.data);
     console.log(response.data.user);
-user.setUser(response.data.user);
-console.log(user.getUser().name);
-         $location.path('/dashboard');
+//user.setUser(response.data.user);
+//console.log(user.getUser().name);
+         $location.path('/dashboard/active');
       },function(err){
        console.log("error");
 //         $location.path('/dashboard');

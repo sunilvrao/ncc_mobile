@@ -1,6 +1,6 @@
 
 angular.module('dashboard.module')
-.controller('ActiveCtrl', function($scope, $location,$http,$stateParams,claimStorage, user ) {
+.controller('ActiveCtrl', function($scope, $location,$http,$stateParams,claimStorage ) {
 
 $scope.claims = [{val : 1}];
 
@@ -25,8 +25,7 @@ $scope.unsetClaimInfo = function(){
 
 }
 console.log("hehehehe");
-console.log(user.getUser());
-  var url = "http://localhost:3000/users/"+user.getUser().id+"/claims";
+  var url = "http://localhost:3000/users/4/claims";
   $http({
   method: "GET",
   url: url,
